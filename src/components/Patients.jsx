@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AiOutlineEdit, AiOutlineSave, AiOutlineDelete } from 'react-icons/ai';
+import Dashboard from './Dashboard';
 
 const initialPatientsData = [
   { id: 1, name: 'John Doe', number: '1234567890', status: 'Stable', doctor: 'Dr. Smith' },
@@ -67,6 +68,8 @@ const Patients = () => {
   );
 
   return (
+    <div>
+      <Dashboard/>
     <div className="p-6 mt-10 mb-10 ml-20 md:ml-60 md:mr-10 rounded-2xl bg-indigo-200 min-h-screen max-sm:ml-0">
       <h2 className="text-3xl font-bold mb-6 text-gray-800">Patients Management</h2>
 
@@ -176,6 +179,7 @@ const Patients = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

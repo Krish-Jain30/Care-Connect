@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AiOutlineEdit, AiOutlineSave, AiOutlineDelete } from 'react-icons/ai';
+import Dashboard from './Dashboard';
 
 // Initial data for inventory
 const initialInventoryData = [
@@ -77,6 +78,8 @@ const Inventory = () => {
   const totalValue = filteredInventory.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2);
 
   return (
+    <div>
+      <Dashboard/>
     <div className="p-6 mt-10 mb-10 ml-20 md:ml-60 md:mr-10 rounded-2xl bg-indigo-200 min-h-screen max-sm:ml-0">
       <h2 className="text-3xl font-bold mb-6 text-gray-800">Inventory Management</h2>
 
@@ -228,6 +231,7 @@ const Inventory = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

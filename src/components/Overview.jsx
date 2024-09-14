@@ -1,11 +1,14 @@
 import { useGlobalContext } from '../context/Context';
 import { AiOutlineUser, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import avatar from '../assets/avatar.jpg';
+import Dashboard from './Dashboard';
 
 const Overview = () => {
   const { doctors, patients, inventory, accountDetails } = useGlobalContext();
 
   return (
+    <div>
+      <Dashboard/>
     <div className="mt-10 mb-10 ml-4 md:ml-60 rounded-2xl bg-indigo-200 min-h-screen p-4">
       
       <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800">Overview</h2>
@@ -56,6 +59,7 @@ const Overview = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

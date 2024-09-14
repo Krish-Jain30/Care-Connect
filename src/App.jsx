@@ -1,31 +1,64 @@
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import Overview from './components/Overview';
-import Inventory from './components/Inventory';
-import Doctors from './components/Doctors';
-import Patients from './components/Patients';
+import './App.css'
+import Home from './components/Home'
+import ManagementSignin from './components/ManagementSignin'
+import About from './components/About'
+import { createBrowserRouter , RouterProvider } from 'react-router-dom'
+import DoctorSignin from './components/DoctorSignin'
+import StaffSignin from './components/StaffSignin'
+import Overview from './components/Overview'
 import { GlobalProvider } from './context/Context';
-
-
-const App = () => {
-  return (
+import Patients from './components/Patients'
+import Doctors from './components/Doctors'
+import Inventory from './components/Inventory'
+function App(){
+  const router = createBrowserRouter([
+    {
+      path : '/',
+      element : <Home/>
+    },
+    {
+      path : '/Mangement-Login',
+      element : <ManagementSignin/>
+    },
+    {
+      path : '/Doctor-Login',
+      element : <DoctorSignin/>
+    },
+    {
+      path : '/Staff-Login',
+      element : <StaffSignin/>
+    },
+    {
+      path : '/About',
+      element : <About/>
+    },
+    {
+      path : '/Mangement-Login/Dashboard/overview',
+      element : <Overview/>
+    },
+    {
+      path : '/Mangement-Login/Dashboard/patients',
+      element : <Patients/>
+    },
+    {
+      path : '/Mangement-Login/Dashboard/doctors',
+      element : <Doctors/>
+    },
+    {
+      path : '/Mangement-Login/Dashboard/inventory',
+      element : <Inventory/>
+    },
+    {
+      path : '/',
+      element : <Home/>
+    },
+  ])
+  return(
     <GlobalProvider>
-      <Router>
-        <div className="app">
-          <Sidebar/>
-          <div className='main-content'>
-            <Routes>
-              <Route path='/overview' element={<Overview/>} />
-              <Route path='/inventory' element={<Inventory/>} />
-              <Route path='/patients' element={<Patients/>} />
-              <Route path='/doctors' element={<Doctors/>} />
-            </Routes>
-          </div>
-        </div>
-      </Router>
-    </GlobalProvider>
     
-  );
+    <RouterProvider router={router}/>
+    </GlobalProvider>
+  )
 }
+export default App ;
 
-export default App;
