@@ -11,18 +11,18 @@ const App = () => {
   return (
     <GlobalProvider>
       <Router>
-    <div className="app">
-      <Sidebar/>
-      <div className='main-content'>
-      <Routes>
-        <Route path='/' element={<Overview/>} />
-        <Route path='/inventory' element={<Inventory/>} />
-        <Route path='/patients' element={<Patients/>} />
-        <Route path='/doctors' element={<Doctors/>} />
-      </Routes>
-      </div>
-    </div>
-    </Router>
+        <div className="app">
+          <Sidebar/>
+          <div className='main-content'>
+            <Routes>
+              <Route path='/overview' element={<Overview/>} />
+              <Route path='/inventory' element={<Inventory/>} />
+              <Route path='/patients' element={<Patients/>} />
+              <Route path='/doctors' element={<Doctors/>} />
+            </Routes>
+          </div>
+        </div>
+      </Router>
     </GlobalProvider>
     
   );
