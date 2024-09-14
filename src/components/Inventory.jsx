@@ -77,7 +77,7 @@ const Inventory = () => {
   const totalValue = filteredInventory.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2);
 
   return (
-    <div className="p-6 mt-10 mb-10 ml-20 md:ml-60 md:mr-10 rounded-2xl bg-indigo-200 min-h-screen">
+    <div className="p-6 mt-10 mb-10 ml-20 md:ml-60 md:mr-10 rounded-2xl bg-indigo-200 min-h-screen max-sm:ml-0">
       <h2 className="text-3xl font-bold mb-6 text-gray-800">Inventory Management</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
