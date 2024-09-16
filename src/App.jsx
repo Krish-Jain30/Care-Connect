@@ -10,6 +10,7 @@ import { GlobalProvider } from './context/Context';
 import Patients from './components/Patients'
 import Doctors from './components/Doctors'
 import Inventory from './components/Inventory'
+import InProgress from './components/InProgress'
 function App(){
   const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ function App(){
     {
       path : '/',
       element : <Home/>
+    },
+    {
+      path : '/Doctor-Login/in-progress',
+      element : <InProgress/>
     },
   ])
   return(

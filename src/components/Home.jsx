@@ -39,7 +39,7 @@ const Home = () => {
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-bold text-blue-600 mb-4">Doctor Signup</h2>
             <p className="text-gray-600 mb-6">Join as a doctor and manage your patients seamlessly.</p>
-            <Link to = '/Doctor-Login/in-progress'>
+            <Link to = '/Doctor-Login'>
             <button className="w-full bg-blue-600 text-white py-2 rounded-full font-semibold hover:bg-blue-500">
             Login as Doctor
             </button>
