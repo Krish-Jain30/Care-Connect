@@ -142,7 +142,7 @@ const Inventory = () => {
                         onChange={(e) => setEditForm({ ...editForm, price: e.target.value })}
                       />
                     ) : (
-                      `$${item.price.toFixed(2)}`
+                      `₹${item.price.toFixed(2)}`
                     )}
                   </td>
                   <td className="border p-2 text-gray-600 flex space-x-2">
@@ -224,7 +224,7 @@ const Inventory = () => {
               </div>
               <div className="flex justify-between">
                 <span className="font-medium text-gray-700">Total Value:</span>
-                <span className="text-gray-900">${totalValue}</span>
+                <span className="text-gray-900">₹{totalValue}</span>
               </div>
             </div>
           </div>

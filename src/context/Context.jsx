@@ -1,4 +1,3 @@
-// Context.js
 import { createContext, useState, useContext, useEffect } from 'react';
 
 const GlobalContext = createContext();
@@ -45,8 +44,52 @@ export const GlobalProvider = ({ children }) => {
     fetchAccountDetails();
   }, []);
 
+  // Functions to update data
+  const addDoctor = (newDoctor) => setDoctors((prevDoctors) => [...prevDoctors, newDoctor]);
+  const updateDoctor = (updatedDoctor) => setDoctors((prevDoctors) => 
+    prevDoctors.map((doc) => doc.id === updatedDoctor.id ? updatedDoctor : doc)
+  );
+  const removeDoctor = (doctorId) => setDoctors((prevDoctors) => 
+    prevDoctors.filter((doc) => doc.id !== doctorId)
+  );
+
+  const addPatient = (newPatient) => setPatients((prevPatients) => [...prevPatients, newPatient]);
+  const updatePatient = (updatedPatient) => setPatients((prevPatients) => 
+    prevPatients.map((patient) => patient.id === updatedPatient.id ? updatedPatient : patient)
+  );
+  const removePatient = (patientId) => setPatients((prevPatients) => 
+    prevPatients.filter((patient) => patient.id !== patientId)
+  );
+
+  const addInventoryItem = (newItem) => setInventory((prevInventory) => [...prevInventory, newItem]);
+  const updateInventoryItem = (updatedItem) => setInventory((prevInventory) => 
+    prevInventory.map((item) => item.id === updatedItem.id ? updatedItem : item)
+  );
+  const removeInventoryItem = (itemId) => setInventory((prevInventory) => 
+    prevInventory.filter((item) => item.id !== itemId)
+  );
+
+  const updateAccountDetails = (newDetails) => setAccountDetails(newDetails);
+
   return (
-    <GlobalContext.Provider value={{ doctors, patients, inventory, accountDetails }}>
+    <GlobalContext.Provider
+      value={{
+        doctors,
+        patients,
+        inventory,
+        accountDetails,
+        addDoctor,
+        updateDoctor,
+        removeDoctor,
+        addPatient,
+        updatePatient,
+        removePatient,
+        addInventoryItem,
+        updateInventoryItem,
+        removeInventoryItem,
+        updateAccountDetails
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );
